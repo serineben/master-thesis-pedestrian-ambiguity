@@ -38,7 +38,7 @@ master-thesis-pedestrian-ambiguity/
 
 ## 🛠 Pipeline
 
-<img src="results/pipeline.png" alt="Pipeline" width="600"/>
+<img src="images/pipeline.png" alt="Pipeline" width="600"/>
 
 1. 🎬 Extract frames from videos.  
 2. 👁️ Manually select frames with pedestrians.  
@@ -54,8 +54,8 @@ master-thesis-pedestrian-ambiguity/
 
 Examples of YOLOv8 mistakes:
 
-<img src="results/false_positive1.jpg" alt="False Positive 1" width="400"/>
-<img src="results/false_positive2.jpg" alt="False Positive 2" width="400"/>
+<img src="images/false_positive1.jpg" alt="False Positive 1" width="400"/>
+<img src="iamges/false_positive2.jpg" alt="False Positive 2" width="400"/>
 
 ### 📈 Confusion Matrices & Heatmap
 
@@ -73,5 +73,6 @@ python src/image_selection.py
 python src/run_yolo_detection.py
 python src/LLAVAselectiontheone.py
 python src/final-conclusion.py
+
 
 
