@@ -65,7 +65,7 @@ Example visualizations:
 
 ## 📘 Citation
 If you wish to reference or reuse this work, please cite it as:
-> *[Your Name]*, "Ambiguous Pedestrian Detection in Urban Environments", Master's Thesis, 2025.
+> *Serine Benmohra*, "Ambiguous Pedestrian Detection in Urban Environments", Master's Thesis, 2025.
 
 ---
 
@@ -73,5 +73,6 @@ If you wish to reference or reuse this work, please cite it as:
 **BENMOHRA SERINE**  
 Master’s in Artificial Intelligence — 2025  
 [LinkedIn](www.linkedin.com/in/serine-benmohra-55715b33b) | [Portfolio](#) | [GitHub](#)
+
 # master-thesis-pedestrian-ambiguity
 # master-thesis-pedestrian-ambiguity
