@@ -1,71 +1,10 @@
-# import os
-# import json
-# from PIL import Image
-# import requests
-# import base64
+"""
+llava_analysis.py
 
-# # Configuration
-# FRAMES_DIR = "/home/serine/datos/newdataset/Frames-extracted/part2"
-# OUTPUT_DIR = "/home/serine/datos/newdataset/LLAVA-RESULTS/part2"
-# os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-# OLLAMA_URL = "http://localhost:11434/api/generate"
-# MODEL = "llava:latest"
-
-# def analyze_image(image_path):
-#     with open(image_path, "rb") as img_file:
-#         b64_image = base64.b64encode(img_file.read()).decode("utf-8")
-    
-#     prompt = """Analyze this image. Respond with JSON only:
-#     {
-#         "contains_real_person": bool,
-#         "confidence": float (0-1),
-#         "reason": "string"
-#     }"""
-    
-#     response = requests.post(
-#         OLLAMA_URL,
-#         json={
-#             "model": MODEL,
-#             "prompt": prompt,
-#             "images": [b64_image],
-#             "format": "json",
-#             "stream": False
-#         }
-#     )
-    
-#     try:
-#         return response.json()["response"]
-#     except:
-#         return json.dumps({
-#             "contains_real_person": False,
-#             "confidence": 0.0,
-#             "reason": "analysis failed"
-#         })
-
-# # Process all frames
-# for frame in os.listdir(FRAMES_DIR):
-#     result = analyze_image(f"{FRAMES_DIR}/{frame}")
-    
-#     # Save as JSON with proper formatting
-#     output_path = f"{OUTPUT_DIR}/{os.path.splitext(frame)[0]}.json"
-#     with open(output_path, "w") as f:
-#         if isinstance(result, str):
-#             try:
-#                 json.loads(result)  # Validate JSON
-#                 f.write(result)
-#             except:
-#                 f.write(json.dumps({
-#                     "contains_real_person": None,
-#                     "confidence": 0.0,
-#                     "reason": "invalid response format"
-#                 }))
-#         else:
-#             json.dump(result, f)
-
-
-
-
+Processes frames extracted from videos to detect pedestrians using LLaVA.
+Generates JSON outputs with detailed scene understanding and rejected items.
+Also supports approximate visualization of detection results on frames.
+"""
 
 import os
 import json
@@ -75,9 +14,9 @@ from tqdm import tqdm
 from PIL import Image
 import time
 
-# Configuration
+# ---------------------- Configuration ----------------------
 FRAMES_DIR = "/home/serine/datos/newdataset/Frames-extracted/week30"
-OUTPUT_DIR = "/home/serine/datos/newdataset/LLAVA-RESULTS/week30_nv"
+OUTPUT_DIR = "/home/serine/datos/newdataset/LLAVA-RESULTS/week30"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
@@ -85,10 +24,12 @@ MODEL = "llava:latest"
 TIMEOUT = 60  # Increased timeout for complex scenes
 MAX_RETRIES = 3
 
+
+# ---------------------- Functions ----------------------
 def analyze_image(image_path):
     """Enhanced pedestrian detection with urban scene understanding"""
     try:
-        # First verify the image is valid
+        # Verify that the image is valid
         with Image.open(image_path) as img:
             img.verify()
         
@@ -173,7 +114,7 @@ def analyze_image(image_path):
             "rejected_items": []
         }
 
-# Process frames with enhanced error handling
+# ---------------------- Main processing ----------------------
 for frame in tqdm(sorted(os.listdir(FRAMES_DIR))):
     if not frame.lower().endswith(('.png', '.jpg', '.jpeg')):
         continue
@@ -181,7 +122,7 @@ for frame in tqdm(sorted(os.listdir(FRAMES_DIR))):
     frame_path = os.path.join(FRAMES_DIR, frame)
     output_path = os.path.join(OUTPUT_DIR, f"{os.path.splitext(frame)[0]}.json")
     
-    # Try up to MAX_RETRIES times
+    # Retry mechanism
     for attempt in range(MAX_RETRIES):
         try:
             result = analyze_image(frame_path)
