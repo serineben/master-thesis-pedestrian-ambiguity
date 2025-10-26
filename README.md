@@ -114,11 +114,15 @@ python src/real_time_yolo.py
 ```
 
 
-**👨‍🎓 Author**
-Serine Benmohra
-Master's Student in Computer Science/Artificial Intelligence
-[https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin](https://www.linkedin.com/in/serine-benmohra-55715b33b)
-This project represents my Master's Thesis research in Universidad de Alicante.
+## 👨‍🎓 Author
+
+**Serine Benmohra**  
+📧 serinebenmohra@gmail.com  
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/serine-benmohra-55715b33b)  
+🎓 Master's Student in Artificial Intelligence  
+🏫 Universidad de Alicante  
+
+*This Master's Thesis research focuses on pedestrian detection systems for autonomous vehicles.*
 
 **📝 Citation**
 If you use this work in your research, please cite:
@@ -130,6 +134,7 @@ If you use this work in your research, please cite:
   school={Universidad de Alicante}
 }
 ```
+
 
 
 
