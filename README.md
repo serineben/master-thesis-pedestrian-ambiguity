@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)](https://www.python.org/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.8-blue?logo=opencv)](https://opencv.org/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/serine-benmohra-55715b33b)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+
 
 This Master's Thesis project explores advanced pedestrian detection in urban driving scenarios using **YOLOv8** and **LLaVA**. The research focuses on handling challenging cases such as partial visibility, occlusions, and ambiguous pedestrian appearances to enhance autonomous driving safety.
 
@@ -86,7 +86,7 @@ Examples where YOLOv8 alone produces incorrect detections:
 **📈 Performance Metrics**
 Comparative analysis of YOLOv8 and LLaVA performance:
 
-<img src="results/conclusion/YOLO_confusion_matrix.png" alt="YOLO Confusion Matrix" width="400"/> <img src="results/conclusion/LLAVA_confusion_matrix.png" alt="LLaVA Confusion Matrix" width="400"/> <img src="results/conclusion/heatmap_yolo_vs_llava.png" alt="YOLO vs LLaVA Performance Heatmap" width="400"/>
+<img src="results/conclusion/YOLO_confusion_matrix.png" alt="YOLO Confusion Matrix" width="400"/> <img src="results/conclusion/LLAVA_confusion_matrix.png" alt="LLaVA Confusion Matrix" width="400"/> 
 
 ---
 ### ⚙️ Installation & Usage
@@ -113,6 +113,7 @@ python src/analyze_results.py
 python src/real_time_yolo.py
 ```
 
+
 **👨‍🎓 Author**
 Serine Benmohra
 Master's Student in Computer Science/Artificial Intelligence
@@ -129,6 +130,7 @@ If you use this work in your research, please cite:
   school={Universidad de Alicante}
 }
 ```
+
 
 
 
