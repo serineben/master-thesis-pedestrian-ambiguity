@@ -21,20 +21,25 @@ master-thesis-pedestrian-ambiguity/
 ├── 📊 data/
 │   └── dataset_person_summary.csv
 ├── 🔧 src/
-│   ├── extraireframe.py
+│   ├── analyze_results.py
 │   ├── image_selection.py
 │   ├── run_yolo_detection.py
-│   ├── real-time-yolo.py
-│   └── LLAVAselectiontheone.py
+│   ├── real_time_yolo.py
+│   └── extract_frames.py
+│   └── llava_analysis.py
 ├── 📈 results/
-│   ├── pipeline.png
-│   ├── false_positive1.jpg
-│   ├── false_positive2.jpg
+│   ├── llava-results.csv
+│   ├── merged-results.csv
+│   ├── yolo-results.csv
 │   └── conclusion/
 │       ├── YOLO_confusion_matrix.png
 │       ├── LLAVA_confusion_matrix.png
 │       ├── heatmap_yolo_vs_llava.png
 │       └── summary_metrics.csv
+├── images/
+│   ├── pipeline.png
+│   ├── yolo_false_positive1.jpg
+│   ├── yolo_false_positive2.jpg
 ├── 📄 thesis/
 │   └── master_thesis_document.pdf
 ├── README.md
@@ -46,7 +51,7 @@ master-thesis-pedestrian-ambiguity/
 **🛠️ Methodology**
 
 **Pipeline Overview**
-<img src="images/pipeline.png" alt="Research Pipeline" width="700"/>
+<img src="images/pipeline.png" alt="Research Pipeline" width="400" height="400"/>
 
 🎬 Frame Extraction - Extract relevant frames from driving scenario videos
 
@@ -66,16 +71,18 @@ master-thesis-pedestrian-ambiguity/
 
 The combined YOLOv8 + LLaVA approach shows significant improvement in handling ambiguous cases:
 
-*Reduced false positives* in complex urban scenes
+**Reduced false positives** in complex urban scenes
 
-*Enhanced detection* of partially visible pedestrians
+**Enhanced detection** of partially visible pedestrians
 
-*Better contextual* understanding of occluded scenarios
+**Better contextual** understanding of occluded scenarios
 
 **❌ False Positive Analysis**
 Examples where YOLOv8 alone produces incorrect detections:
 
 <img src="images/yolo_false_positive1.jpg" alt="False Positive Case 1" width="400"/> <img src="images/yolo_false_positive2.jpg" alt="False Positive Case 2" width="400"/>
+
+
 **📈 Performance Metrics**
 Comparative analysis of YOLOv8 and LLaVA performance:
 
@@ -86,7 +93,7 @@ Comparative analysis of YOLOv8 and LLaVA performance:
 **Prerequisites**
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/master-thesis-pedestrian-ambiguity.git
+git clone https://github.com/serineben/master-thesis-pedestrian-ambiguity.git
 cd master-thesis-pedestrian-ambiguity
 
 # Install dependencies
@@ -122,6 +129,7 @@ If you use this work in your research, please cite:
   school={Universidad de Alicante}
 }
 ```
+
 
 
 
