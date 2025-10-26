@@ -1,36 +1,44 @@
-# 🚶 Pedestrian Detection in Autonomous Driving using YOLOv8 & LLAVA
+# 🚶 Pedestrian Detection in Autonomous Driving using YOLOv8 & LLaVA
 
 [![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)](https://www.python.org/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.8-blue?logo=opencv)](https://opencv.org/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](www.linkedin.com/in/serine-benmohra-55715b33b)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/serine-benmohra-55715b33b)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-This project is part of my **Master Thesis** 🎓. It focuses on detecting pedestrians in urban driving scenes using **YOLOv8** and **LLAVA**, handling ambiguous cases such as partially visible or occluded pedestrians.
+This Master's Thesis project explores advanced pedestrian detection in urban driving scenarios using **YOLOv8** and **LLaVA**. The research focuses on handling challenging cases such as partial visibility, occlusions, and ambiguous pedestrian appearances to enhance autonomous driving safety.
+
+---
+
+## 📖 Abstract
+
+Pedestrian detection remains a critical challenge in autonomous driving systems, particularly in complex urban environments. This thesis investigates the integration of **YOLOv8** for real-time object detection and **LLaVA** (Large Language-and-Vision Assistant) for contextual scene understanding to improve detection accuracy in ambiguous scenarios. The proposed approach demonstrates enhanced performance in identifying partially visible and occluded pedestrians compared to traditional methods.
 
 ---
 
 ## 📂 Repository Structure
 
 master-thesis-pedestrian-ambiguity/
-├── data/
-│ └── dataset_person_summary.csv # Summary CSV only (full dataset not included)
-├── src/
-│ ├── extraireframe.py # Frame extraction
-│ ├── image_selection.py # Manual frame selection GUI
-│ ├── run_yolo_detection.py # YOLOv8 detection
-│ ├── real-time-yolo.py # Real-time YOLO demo
-│ └── LLAVAselectiontheone.py # LLAVA scene analysis
-├── results/
-│ ├── pipeline.png # Project pipeline diagram
-│ ├── false_positive1.jpg # Example false positive
-│ ├── false_positive2.jpg # Example false positive
-│ └── conclusion/
-│ ├── YOLO_confusion_matrix.png
-│ ├── LLAVA_confusion_matrix.png
-│ ├── heatmap_yolo_vs_llava.png
-│ └── summary_metrics.csv
+├── 📊 data/
+│   └── dataset_person_summary.csv
+├── 🔧 src/
+│   ├── extraireframe.py
+│   ├── image_selection.py
+│   ├── run_yolo_detection.py
+│   ├── real-time-yolo.py
+│   └── LLAVAselectiontheone.py
+├── 📈 results/
+│   ├── pipeline.png
+│   ├── false_positive1.jpg
+│   ├── false_positive2.jpg
+│   └── conclusion/
+│       ├── YOLO_confusion_matrix.png
+│       ├── LLAVA_confusion_matrix.png
+│       ├── heatmap_yolo_vs_llava.png
+│       └── summary_metrics.csv
+├── 📄 thesis/
+│   └── master_thesis_document.pdf
 ├── README.md
-└── merged_results.csv
-
+└── requirements.txt
 
 > ⚠️ Full datasets and complete results are not included due to size constraints.
 
@@ -73,6 +81,7 @@ python src/image_selection.py
 python src/run_yolo_detection.py
 python src/llava_analysis.py
 python src/analyze_results.py
+
 
 
 
