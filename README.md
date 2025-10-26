@@ -16,7 +16,7 @@ Pedestrian detection remains a critical challenge in autonomous driving systems,
 ---
 
 ## 📂 Repository Structure
-
+```bash
 master-thesis-pedestrian-ambiguity/
 ├── 📊 data/
 │   └── dataset_person_summary.csv
@@ -39,48 +39,92 @@ master-thesis-pedestrian-ambiguity/
 │   └── master_thesis_document.pdf
 ├── README.md
 └── requirements.txt
+```
+> Note: Full datasets and extensive results are not included due to size constraints. Contact me for access to complete research materials.
 
-> ⚠️ Full datasets and complete results are not included due to size constraints.
+---
+**🛠️ Methodology**
+
+**Pipeline Overview**
+<img src="images/pipeline.png" alt="Research Pipeline" width="700"/>
+
+🎬 Frame Extraction - Extract relevant frames from driving scenario videos
+
+👁️ Manual Curation - Select frames containing pedestrians using interactive GUI
+
+🤖 YOLOv8 Detection - Perform initial pedestrian detection using YOLOv8
+
+🔍 LLaVA Analysis - Apply vision-language model for contextual understanding
+
+📊 Comparative Evaluation - Analyze results using confusion matrices and heatmaps
 
 ---
 
-## 🛠 Pipeline
+## 📊 Key Results
 
-<img src="images/pipeline.png" alt="Pipeline" width="600"/>
+### Detection Performance
 
-1. 🎬 Extract frames from videos.  
-2. 👁️ Manually select frames with pedestrians.  
-3. 🤖 Detect pedestrians using YOLOv8.  
-4. 🔍 Analyze scenes with LLAVA.  
-5. 📊 Evaluate results with confusion matrices & heatmaps.
+The combined YOLOv8 + LLaVA approach shows significant improvement in handling ambiguous cases:
 
----
+*Reduced false positives* in complex urban scenes
 
-## 📊 Results Examples
+*Enhanced detection* of partially visible pedestrians
 
-### ❌ False Positives
+*Better contextual* understanding of occluded scenarios
 
-Examples of YOLOv8 mistakes:
+**❌ False Positive Analysis**
+Examples where YOLOv8 alone produces incorrect detections:
 
-<img src="images/yolo_false_positive1.jpg" alt="False Positive 1" width="400"/>
-<img src="images/yolo_false_positive2.jpg" alt="False Positive 2" width="400"/>
+<img src="images/yolo_false_positive1.jpg" alt="False Positive Case 1" width="400"/> <img src="images/yolo_false_positive2.jpg" alt="False Positive Case 2" width="400"/>
+**📈 Performance Metrics**
+Comparative analysis of YOLOv8 and LLaVA performance:
 
-### 📈 Confusion Matrices & Heatmap
-
-<img src="results/conclusion/YOLO_confusion_matrix.png" alt="YOLO Confusion Matrix" width="400"/>
-<img src="results/conclusion/LLAVA_confusion_matrix.png" alt="LLAVA Confusion Matrix" width="400"/>
-<img src="results/conclusion/heatmap_yolo_vs_llava.png" alt="YOLO vs LLAVA Heatmap" width="400"/>
+<img src="results/conclusion/YOLO_confusion_matrix.png" alt="YOLO Confusion Matrix" width="400"/> <img src="results/conclusion/LLAVA_confusion_matrix.png" alt="LLaVA Confusion Matrix" width="400"/> <img src="results/conclusion/heatmap_yolo_vs_llava.png" alt="YOLO vs LLaVA Performance Heatmap" width="400"/>
 
 ---
-
-## ⚙ How to Run
-
+### ⚙️ Installation & Usage
+**Prerequisites**
 ```bash
+# Clone repository
+git clone https://github.com/yourusername/master-thesis-pedestrian-ambiguity.git
+cd master-thesis-pedestrian-ambiguity
+
+# Install dependencies
+pip install -r requirements.txt 
+```
+
+**Execution Pipeline** 
+```bash
+# Run the complete analysis pipeline
 python src/extract_frames.py
 python src/image_selection.py
 python src/run_yolo_detection.py
 python src/llava_analysis.py
 python src/analyze_results.py
+
+# For real-time demonstration
+python src/real_time_yolo.py
+```
+
+**👨‍🎓 Author**
+Serine Benmohra
+Master's Student in Computer Science/Artificial Intelligence
+[https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin](https://www.linkedin.com/in/serine-benmohra-55715b33b)
+This project represents my Master's Thesis research in Universidad de Alicante.
+
+**📝 Citation**
+If you use this work in your research, please cite:
+```bash
+@mastersthesis{benmohra2025pedestrian,
+  title={Pedestrian Detection in Autonomous Driving using YOLOv8 and LLaVA},
+  author={Benmohra, Serine},
+  year={2025},
+  school={Universidad de Alicante}
+}
+```
+
+
+
 
 
 
