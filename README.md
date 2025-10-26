@@ -54,8 +54,8 @@ master-thesis-pedestrian-ambiguity/
 
 Examples of YOLOv8 mistakes:
 
-<img src="images/false_positive1.jpg" alt="False Positive 1" width="400"/>
-<img src="iamges/false_positive2.jpg" alt="False Positive 2" width="400"/>
+<img src="images/yolo_false_positive1.jpg" alt="False Positive 1" width="400"/>
+<img src="iamges/yolo_false_positive2.jpg" alt="False Positive 2" width="400"/>
 
 ### 📈 Confusion Matrices & Heatmap
 
@@ -68,11 +68,12 @@ Examples of YOLOv8 mistakes:
 ## ⚙ How to Run
 
 ```bash
-python src/extraireframe.py
+python src/extract_frames.py
 python src/image_selection.py
 python src/run_yolo_detection.py
-python src/LLAVAselectiontheone.py
-python src/final-conclusion.py
+python src/llava_analysis.py
+python src/analyze_results.py
+
 
 
 
