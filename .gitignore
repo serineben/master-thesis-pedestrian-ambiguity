@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+*.egg-info/
+*.ipynb_checkpoints
+
+# Data and results (we keep only small CSVs and visualizations)
+data/YOLO-RESULTS/
+data/LLAVA-RESULTS/
+data/ground_truth_csv/
+results/*.csv
+results/conclusion/*.png
+results/conclusion/*.csv
+
+# Large files to exclude
+*.mp4
+*.avi
+*.mov
+*.zip
+*.tar.gz
+*.h5
+*.pt
+*.pth
+
+# OS files
+.DS_Store
+Thumbs.db
