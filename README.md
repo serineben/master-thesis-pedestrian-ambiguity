@@ -2,7 +2,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)](https://www.python.org/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.8-blue?logo=opencv)](https://opencv.org/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/serineben/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](www.linkedin.com/in/serine-benmohra-55715b33b/)
 
 This project is part of my **Master Thesis** 🎓. It focuses on detecting pedestrians in urban driving scenes using **YOLOv8** and **LLAVA**, handling ambiguous cases such as partially visible or occluded pedestrians.
 
@@ -73,6 +73,7 @@ python src/image_selection.py
 python src/run_yolo_detection.py
 python src/llava_analysis.py
 python src/analyze_results.py
+
 
 
 
