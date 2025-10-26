@@ -1,36 +1,28 @@
-# Pedestrian Detection in Autonomous Driving using YOLOv8 and LLAVA
+# 🚶 Pedestrian Detection in Autonomous Driving using YOLOv8 & LLAVA
 
-This repository contains the code and results from my **Master Thesis** project on pedestrian detection in urban driving scenarios, comparing **YOLOv8** and **LLAVA** for handling ambiguous situations.
+[![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.8-blue?logo=opencv)](https://opencv.org/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/serineben/)
 
----
-
-## 📋 Project Overview
-
-The goal of this project is to detect pedestrians in complex urban environments, including partially occluded or visually ambiguous cases, using both classical object detection (YOLOv8) and advanced vision-language model analysis (LLAVA).
-
-Key contributions:  
-- Creation of a diverse dataset from multiple sources (own GoPro recordings, public pedestrian datasets, and university data).  
-- Frame extraction and manual selection of frames containing people.  
-- YOLOv8-based pedestrian detection with confidence-based classification.  
-- LLAVA-based scene understanding and pedestrian verification.  
-- Quantitative evaluation using confusion matrices, heatmaps, and performance metrics.
+This project is part of my **Master Thesis** 🎓. It focuses on detecting pedestrians in urban driving scenes using **YOLOv8** and **LLAVA**, handling ambiguous cases such as partially visible or occluded pedestrians.
 
 ---
 
-## 🗂 Repository Structure
+## 📂 Repository Structure
 
 master-thesis-pedestrian-ambiguity/
 ├── data/
-│ └── dataset_person_summary.csv # Summary CSV (full data not included)
+│ └── dataset_person_summary.csv # Summary CSV only (full dataset not included)
 ├── src/
-│ ├── extraireframe.py # Frame extraction script
-│ ├── image_selection.py # GUI tool for manual frame selection
-│ ├── run_yolo_detection.py # YOLOv8 detection script
+│ ├── extraireframe.py # Frame extraction
+│ ├── image_selection.py # Manual frame selection GUI
+│ ├── run_yolo_detection.py # YOLOv8 detection
 │ ├── real-time-yolo.py # Real-time YOLO demo
 │ └── LLAVAselectiontheone.py # LLAVA scene analysis
 ├── results/
-│ ├── false_positive1.jpg # Example false positive 1
-│ ├── false_positive2.jpg # Example false positive 2
+│ ├── pipeline.png # Project pipeline diagram
+│ ├── false_positive1.jpg # Example false positive
+│ ├── false_positive2.jpg # Example false positive
 │ └── conclusion/
 │ ├── YOLO_confusion_matrix.png
 │ ├── LLAVA_confusion_matrix.png
@@ -39,75 +31,47 @@ master-thesis-pedestrian-ambiguity/
 ├── README.md
 └── merged_results.csv
 
-> **Note:** The original image datasets and full results are not included due to large file size. The included CSV and selected illustrative images are sufficient to understand the workflow and outputs.
+
+> ⚠️ Full datasets and complete results are not included due to size constraints.
 
 ---
 
 ## 🛠 Pipeline
 
-The project workflow is summarized in the following diagram:
+<img src="results/pipeline.png" alt="Pipeline" width="600"/>
 
-![Pipeline](results/pipeline.png)
-
-1. **Video Collection** – multiple sources including GoPro, Sydney University dataset.  
-2. **Frame Extraction** – every 10 seconds using `extraireframe.py`.  
-3. **Manual Selection** – using `image_selection.py` to select frames containing people.  
-4. **YOLOv8 Detection** – detect pedestrians and classify confidence levels.  
-5. **LLAVA Scene Analysis** – detailed verification and scene understanding.  
-6. **Evaluation** – merge results and generate confusion matrices, heatmaps, and metrics.
+1. 🎬 Extract frames from videos.  
+2. 👁️ Manually select frames with pedestrians.  
+3. 🤖 Detect pedestrians using YOLOv8.  
+4. 🔍 Analyze scenes with LLAVA.  
+5. 📊 Evaluate results with confusion matrices & heatmaps.
 
 ---
 
 ## 📊 Results Examples
 
-### False Positives Example
+### ❌ False Positives
 
-Illustration of cases where YOLOv8 incorrectly detected a person:
+Examples of YOLOv8 mistakes:
 
-![False Positive 1](results/false_positive1.jpg)
-![False Positive 2](results/false_positive2.jpg)
+<img src="results/false_positive1.jpg" alt="False Positive 1" width="400"/>
+<img src="results/false_positive2.jpg" alt="False Positive 2" width="400"/>
 
-### Confusion Matrices & Heatmap
+### 📈 Confusion Matrices & Heatmap
 
-#### YOLO vs LLAVA Confusion Matrices
-
-![YOLO Confusion Matrix](results/conclusion/YOLO_confusion_matrix.png)
-![LLAVA Confusion Matrix](results/conclusion/LLAVA_confusion_matrix.png)
-
-#### Normalized Heatmap
-
-![YOLO vs LLAVA Heatmap](results/conclusion/heatmap_yolo_vs_llava.png)
+<img src="results/conclusion/YOLO_confusion_matrix.png" alt="YOLO Confusion Matrix" width="400"/>
+<img src="results/conclusion/LLAVA_confusion_matrix.png" alt="LLAVA Confusion Matrix" width="400"/>
+<img src="results/conclusion/heatmap_yolo_vs_llava.png" alt="YOLO vs LLAVA Heatmap" width="400"/>
 
 ---
 
 ## ⚙ How to Run
 
-1. **Frame Extraction:**  
 ```bash
 python src/extraireframe.py
-
-2. **Manual Selection:**  
-```bash
 python src/image_selection.py
-
-3. **YOLO Detection:**  
-```bash
 python src/run_yolo_detection.py
-
-4. **LLAVA Analysis:**  
-```bash
 python src/LLAVAselectiontheone.py
-
-5. **Evaluation & Metrics:**  
-```bash
 python src/final-conclusion.py
 
-Ensure all dependencies are installed (OpenCV, PIL, ultralytics, pandas, seaborn, scikit-learn, tqdm).
-
-
-🔗 Contact / LinkedIn
-
-Connect with me on LinkedIn(#)
-
-Feel free to reach out for collaboration or questions regarding the project.
 
